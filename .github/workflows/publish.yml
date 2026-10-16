@@ -99,6 +99,7 @@ jobs:
 
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
+          retention-days: 7
           name: opencode-cli
           path: |
             packages/opencode/dist/opencode-darwin*
@@ -106,11 +107,13 @@ jobs:
 
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
+          retention-days: 7
           name: opencode-cli-windows
           path: packages/opencode/dist/opencode-windows*
 
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
+          retention-days: 7
           name: opencode-preview-cli
           path: packages/cli/dist/cli-*
 
@@ -211,6 +214,7 @@ jobs:
 
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
+          retention-days: 7
           name: opencode-cli-signed-windows
           path: |
             packages/opencode/dist/opencode-windows-arm64
@@ -392,12 +396,14 @@ jobs:
 
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
+          retention-days: 7
           name: opencode-desktop-${{ matrix.settings.target }}
           path: packages/desktop/dist/*
 
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         if: needs.version.outputs.release
         with:
+          retention-days: 7
           name: latest-yml-${{ matrix.settings.target }}
           path: packages/desktop/dist/latest*.yml
 
